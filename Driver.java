@@ -18,7 +18,7 @@ public class Driver {
         Doctor doctor1 = new Doctor("Dr.Rastin Sabbaghi", 45, "Male", 101, "Cardiologist", new ArrayList<>());
         Doctor doctor2 = new Doctor("Dr.Maya Poulad", 40, "Female", 102, "Neurologist", new ArrayList<>());
 
-
+        // Adding patients and doctors to the hospital
         hospital.addPatient(patient1);
         hospital.addPatient(patient2);
         hospital.addPatient(patient3);
@@ -26,7 +26,7 @@ public class Driver {
         hospital.addDoctor(doctor1);
         hospital.addDoctor(doctor2);
 
-        
+        // Assigning patients to doctors 
         doctor1.assignPatient(patient1);
         doctor2.assignPatient(patient2);
 
@@ -35,7 +35,7 @@ public class Driver {
         MedicalRecord record2 = new MedicalRecord(2, "Headache", "Pain Relievers", LocalDate.now());
         MedicalRecord record3 = new MedicalRecord(3, "Back Pain", "Physical Therapy", LocalDate.now());
 
-        
+        // Adding medical records to patients' histories
         patient1.getMedicalHistory().add(record1.toString());
         patient2.getMedicalHistory().add(record2.toString());
         patient3.getMedicalHistory().add(record3.toString());
@@ -51,7 +51,7 @@ public class Driver {
         for (Doctor doctor : hospital.getDoctors()) {
             System.out.println(doctor);
         }
-
+        // Displaying assigned patients and their medical records
         System.out.println("\nAssigned Patients and their Medical Records:");
         for (Doctor doctor : hospital.getDoctors()) {
             System.out.println("\nDoctor: " + doctor.getName() + ", Specialization: " + doctor.getSpecialization());
